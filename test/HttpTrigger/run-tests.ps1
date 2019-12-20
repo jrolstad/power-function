@@ -10,8 +10,21 @@ Describe 'Executing Http Trigger with name'{
     It 'Should Return a response'{
         $TestContext.FunctionOutput | Should -HaveCount 1
     }
-    It 'Should Return an Http Status of 200 (OK)'{
-        $response = ($TestContext.FunctionOutput | select-object -First 1)
-        $response| Should -Not -Be  $null
+    It 'Should Return an Http Status of (OK)'{
+        $TestContext.FunctionOutput[0].Value.StatusCode| Should -Be 'OK'
+    }
+}
+
+Describe 'Executing Http Trigger without a name'{
+    BeforeEach {
+        $Global:TestContext.Reset()
+        $request = @{Query=@{}}
+        ..\..\src\HttpTrigger\run.ps1 -Request $request
+    }
+    It 'Should Return a response'{
+        $TestContext.FunctionOutput | Should -HaveCount 1
+    }
+    It 'Should Return an Http Status of (BadRequest)'{
+        $TestContext.FunctionOutput[0].Value.StatusCode| Should -Be 'BadRequest'
     }
 }
