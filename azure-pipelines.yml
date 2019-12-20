@@ -35,6 +35,12 @@ stages:
             dotnet build extensions.csproj --output ./$(workingDirectory)/bin
         }
       displayName: 'Build extensions'
+    - task: Pester@8
+      displayName: 'Run Pester Tests'
+      inputs:
+        scriptFolder: '$(System.DefaultWorkingDirectory)\tests\*'
+        resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
+        run32Bit: False
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
