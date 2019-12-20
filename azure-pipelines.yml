@@ -38,7 +38,7 @@ stages:
     - task: Pester Powershell unittest@2
       displayName: 'Run Pester Tests'
       inputs:
-        ItemSpec: '*tests.ps1'
+        ItemSpec: 'test\**\*tests.ps1'
         FailOnError: true
 
     - task: ArchiveFiles@2
