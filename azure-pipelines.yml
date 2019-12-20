@@ -38,7 +38,7 @@ stages:
     - task: Pester@8
       displayName: 'Run Pester Tests'
       inputs:
-        scriptFolder: '$(System.DefaultWorkingDirectory)\test\*'
+        scriptFolder: '$(System.DefaultWorkingDirectory)\test\**\*'
         resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
         run32Bit: False
 
