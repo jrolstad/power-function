@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "powershell.function", "powershell.function\powershell.function.csproj", "{DDA2CAB7-2954-4978-B2C5-8E3549024C7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDA2CAB7-2954-4978-B2C5-8E3549024C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA2CAB7-2954-4978-B2C5-8E3549024C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA2CAB7-2954-4978-B2C5-8E3549024C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA2CAB7-2954-4978-B2C5-8E3549024C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {704C32BD-5647-4832-9C19-5D8FBB6340AD}
+	EndGlobalSection
+EndGlobal
