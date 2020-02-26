@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -21,8 +22,16 @@ namespace powershell.function
         {
             try
             {
+                string body = null;
+                if (req.Body != null)
+                {
+                    using var reader = new StreamReader(req.Body);
+
+                    body = await req.ReadAsStringAsync();
+                }
+
                 using var powershellInstance = PowerShell.Create();
-                powershellInstance.AddScript(command);
+                powershellInstance.AddScript(body ?? command);
                 var result = powershellInstance.Invoke();
                 
                 HandleErrors(powershellInstance);
